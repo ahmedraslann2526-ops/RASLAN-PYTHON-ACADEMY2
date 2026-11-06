@@ -1,0 +1,30 @@
+/* =====================================================================
+   RASLAN PYTHON ACADEMY — project.css  (Phase 3 / Batch 4)
+   صفحة مشروع التخرج (تعتمد على lesson.css وplayground.css)
+   ===================================================================== */
+.pj-title { font-family: var(--font-en); letter-spacing: 0.04em; }
+.pj-title b { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.pj-intro { padding: 22px 26px; }
+.pj-intro h2 { font-size: 19px; font-weight: 800; margin-bottom: 8px; }
+.pj-intro p, .pj-intro li { color: var(--text-2); line-height: 1.9; }
+.pj-intro ol { padding-inline-start: 22px; list-style: decimal; display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
+.pj-editor { padding: 20px 22px; display: flex; flex-direction: column; gap: 10px; }
+.pj-editor h2 { font-size: 18px; font-weight: 800; }
+.pj-editor p { color: var(--text-2); font-size: 14.5px; line-height: 1.8; }
+.pj-editor .ed { height: 460px; }
+.pj-stages { display: flex; flex-direction: column; gap: 16px; }
+.pj-stage.is-locked { opacity: 0.65; }
+.pj-stage .lex__actions .btn[disabled] { opacity: 0.45; }
+.pj-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.pj-chips span { font-size: 12.5px; padding: 3px 10px; border-radius: 99px; color: var(--cyan-2); background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(103, 232, 249, 0.25); }
+.pj-req { display: flex; flex-direction: column; gap: 6px; padding-inline-start: 20px; list-style: disc; color: var(--text); line-height: 1.9; }
+.pj-lockmsg { display: flex; gap: 8px; align-items: center; color: var(--muted); font-size: 14px; }
+.pj-lockmsg .icon { width: 16px; height: 16px; }
+.pj-done { padding: 28px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; border-color: rgba(110, 231, 183, 0.5); }
+.pj-done[hidden] { display: none; }
+.pj-done h2 { font-size: 24px; font-weight: 800; }
+.pj-done p { color: var(--text-2); }
+@media (max-width: 640px) {
+  .pj-editor { padding: 16px 12px; }
+  .pj-editor .ed { height: 380px; }
+}

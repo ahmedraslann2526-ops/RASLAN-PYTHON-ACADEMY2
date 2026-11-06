@@ -1,0 +1,180 @@
+/* =====================================================================
+   RASLAN PYTHON ACADEMY — responsive.css  (Phase 1)
+   Breakpoints: 1200 • 1024 • 860 • 640 • 420
+   ===================================================================== */
+
+/* ---------- Large laptops ---------- */
+@media (max-width: 1200px) {
+  .brand__tag { display: none; }
+  .nav__link { padding: 9px 16px; }
+}
+
+/* ---------- Tablets landscape / small laptops ---------- */
+@media (max-width: 1024px) {
+  .section { padding: 90px 0; }
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .grid--levels { grid-template-columns: repeat(2, 1fr); }
+
+
+  .bento { grid-template-columns: repeat(2, 1fr); }
+  .bento__item, .bento__item--wide, .bento__item--code { grid-column: span 1; }
+  .bento__item--cert { grid-column: span 2; }
+
+  .about { grid-template-columns: 1fr; text-align: center; padding: 44px 28px; gap: 36px; }
+  .about__name { text-align: center; }
+  .values { justify-content: center; }
+}
+
+/* ---------- Hero: keep two columns on small laptops so the CTA stays in the first screen ---------- */
+@media (max-width: 1100px) {
+  .hero { padding-top: calc(var(--nav-h) + 24px); padding-bottom: 70px; }
+  .hero__grid { gap: 28px; }
+  .hero__title { font-size: clamp(33px, 4.7vw, 47px); }
+  .hero__desc { margin-top: 16px; font-size: 17px; line-height: 1.8; }
+  .hero__actions { margin-top: 26px; gap: 10px; }
+  .hero__actions .btn--lg { --h: 52px; padding: 0 20px; font-size: 16px; }
+  .hero__stats { margin-top: 30px; }
+  .eyebrow { margin-bottom: 18px; }
+}
+
+/* ---------- Hero single column (tablet portrait and phones) ---------- */
+@media (max-width: 900px) {
+  .hero__grid { grid-template-columns: 1fr; gap: 14px; text-align: center; }
+  .hero__content { display: flex; flex-direction: column; align-items: center; }
+  .hero__desc { margin-inline: auto; }
+  .hero__actions, .hero__stats { justify-content: center; }
+  .hero__stage { width: min(100%, 520px, 40vh); order: -1; margin-top: 0; }
+  .hero { padding-top: calc(var(--nav-h) + 10px); }
+  .hero__title { font-size: clamp(32px, 6.4vw, 52px); }
+  .scroll-hint { display: none; }
+}
+
+/* ---------- Mobile navigation kicks in ---------- */
+@media (max-width: 860px) {
+  :root { --nav-h: 68px; }
+  .nav__links, .nav__cta { display: none; }
+  .burger { display: flex; }
+  .brand__name { font-size: 14px; }
+
+  /* Timeline becomes single column */
+  .timeline { gap: 22px; padding-inline-start: 0; }
+  .timeline__line { inset-inline-start: 26px; margin-inline-start: 0; }
+  .timeline__item { grid-template-columns: 1fr; padding-inline-start: 72px; }
+  .timeline__item:nth-child(odd) .timeline__card,
+  .timeline__item:nth-child(even) .timeline__card { grid-column: 1; justify-self: stretch; width: 100%; }
+  .timeline__node { inset-inline-start: 0; top: 36px; margin: 0; width: 52px; height: 52px; }
+  [dir="rtl"] .timeline__node { margin: 0; }
+  .timeline__line { inset-inline-start: 25px; }
+  .timeline__item .reveal, .js-ready .timeline__item.reveal[data-anim="left"],
+  .js-ready .timeline__item.reveal[data-anim="right"] { transform: translateY(40px); }
+  .js-ready .timeline__item.reveal.is-visible { transform: none; }
+
+  .bento__item--cert { flex-direction: column; align-items: flex-start; }
+  .mini-cert { width: 100%; max-width: 420px; align-self: center; }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .container { width: min(1200px, 100% - 32px); }
+  .section { padding: 70px 0; }
+  .section__head { margin-bottom: 40px; }
+  .section__sub { font-size: 16.5px; }
+
+  .grid--4, .grid--levels { grid-template-columns: 1fr; gap: 16px; }
+  .card { padding: 26px 22px; }
+
+  .hero { min-height: auto; padding-bottom: 70px; }
+  .hero__stage { width: min(100%, 420px, 34vh); }
+  .eyebrow { margin-bottom: 14px; padding: 6px 14px; font-size: 12.5px; }
+  .hero__desc { margin-top: 14px; line-height: 1.8; }
+  .hero__actions { margin-top: 22px; gap: 10px; }
+  .hero__actions { flex-direction: column; width: 100%; }
+  .hero__actions .btn { width: 100%; }
+  .hero__stats { width: 100%; gap: 10px; }
+  .hero__stats li { flex: 1 1 calc(33% - 10px); min-width: 0; padding: 12px 10px; text-align: center; }
+  .hero__stats strong { font-size: 24px; }
+  .hero__stats span { font-size: 12px; line-height: 1.5; display: block; }
+
+  .bot-bubble { font-size: 13px; max-width: 190px; padding: 9px 13px; inset-inline-start: 0; }
+  .bot-mood { height: 36px; padding: 0 13px; font-size: 13px; }
+  .chip { font-size: 12px; padding: 6px 11px; border-radius: 11px; }
+  .chip--d, .chip--e { display: none; }
+  .codecard { width: 62%; inset-inline-start: -2%; bottom: -6%; }
+  .codecard__body { font-size: 11px; min-height: 138px; padding: 10px 12px 12px; }
+
+  .tabs { width: 100%; justify-content: flex-start; }
+  .tab { padding: 10px 16px; font-size: 14px; }
+  .level__btn { padding: 20px 18px; gap: 12px; }
+  .level__num { font-size: 32px; }
+  .level__topics { padding-inline: 18px; }
+  .level.is-open .level__topics { padding: 0 18px 20px; }
+
+  .bento { grid-template-columns: 1fr; gap: 16px; }
+  .bento__item--cert { grid-column: span 1; }
+
+  .timeline__card { padding: 20px 20px; }
+  .timeline__card h3 { font-size: 19px; }
+
+  .about { padding: 34px 20px; }
+  .about__text p { font-size: 16px; }
+
+  .cta { padding: 52px 22px; }
+  .cta__actions { flex-direction: column; }
+  .cta__actions .btn { width: 100%; }
+
+  .footer__top { flex-direction: column; }
+  .footer__bottom { flex-direction: column; text-align: center; justify-content: center; }
+  .to-top { bottom: 16px; inset-inline-start: 16px; width: 46px; height: 46px; }
+
+  .cursor-glow { display: none; }
+}
+
+/* ---------- Small phones ---------- */
+@media (max-width: 420px) {
+  .brand__name { font-size: 12.5px; letter-spacing: 0.06em; }
+  .brand__logo { width: 36px; height: 36px; }
+  .hero__title { font-size: clamp(27px, 8.2vw, 33px); line-height: 1.3; }
+  .hero__desc { font-size: 15.5px; }
+  .btn--lg { --h: 52px; font-size: 16px; padding: 0 22px; }
+  .bot-bubble { display: none; }
+  .codecard { display: none; }
+  .hero__stats li { flex: 1 1 100%; }
+  .hero__stats { flex-direction: column; }
+  .hero__stats li { display: flex; align-items: center; justify-content: space-between; text-align: start; padding: 12px 18px; }
+}
+
+/* ---------- Touch devices: no hover-only effects ---------- */
+@media (hover: none) {
+  .tilt { transform: none !important; }
+  .card:hover, .level:hover, .timeline__card:hover { transform: none; }
+  .cursor-glow { display: none; }
+}
+
+/* ---------- Short landscape phones ---------- */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero { min-height: auto; padding-bottom: 60px; }
+}
+
+/* ---------- Very short phones (≈640px tall): compress the hero so the main CTA is visible ---------- */
+@media (max-width: 420px) and (max-height: 720px) {
+  .hero__stage { width: min(100%, 300px, 25vh); }
+  .eyebrow { margin-bottom: 10px; font-size: 12px; padding: 5px 12px; }
+  .hero__desc { font-size: 15px; line-height: 1.7; margin-top: 10px; }
+  .hero__actions { margin-top: 16px; }
+}
+
+/* ---------- Landscape phones (short and wide): two-column hero, no overlapping decorations ---------- */
+@media (max-height: 520px) and (min-width: 560px) and (orientation: landscape) {
+  .hero { padding-top: calc(var(--nav-h) + 6px); padding-bottom: 40px; }
+  .hero__grid { grid-template-columns: 1.15fr 0.85fr; gap: 20px; text-align: start; }
+  .hero__content { align-items: flex-start; }
+  .hero__actions { justify-content: flex-start; margin-top: 14px; gap: 8px; }
+  .hero__stats { display: none; }
+  .hero__stage { order: 0; width: min(100%, 300px, 72vh); }
+  .hero__title { font-size: clamp(24px, 4.2vw, 36px); }
+  .hero__desc { font-size: 14.5px; line-height: 1.7; margin-top: 8px; }
+  .eyebrow { margin-bottom: 8px; padding: 4px 12px; font-size: 11.5px; }
+  .btn--lg { --h: 44px; font-size: 14.5px; padding: 0 16px; }
+  .codecard, .chip, .bot-bubble { display: none; }
+}

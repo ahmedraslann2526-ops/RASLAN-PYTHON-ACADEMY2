@@ -1,0 +1,50 @@
+/* =====================================================================
+   RASLAN PYTHON ACADEMY — auth.css  (Phase 2)
+   ===================================================================== */
+.auth { display: grid; grid-template-columns: 1fr 1.05fr; gap: 28px; align-items: start; max-width: 1060px; }
+.auth__side, .auth__card { padding: 36px 34px; }
+.auth__logo { filter: drop-shadow(0 0 22px rgba(47, 107, 255, 0.6)); margin-bottom: 18px; }
+.auth__title { font-size: clamp(26px, 3.2vw, 36px); font-weight: 800; line-height: 1.4; margin-bottom: 12px; }
+.auth__lead { color: var(--text-2); font-size: 16.5px; line-height: 1.85; margin-bottom: 22px; }
+.auth__perks { display: flex; flex-direction: column; gap: 14px; margin-bottom: 26px; }
+.auth__perks li { display: flex; gap: 12px; align-items: flex-start; color: var(--text-2); font-size: 15.5px; line-height: 1.75; }
+.auth__perks .icon { width: 22px; height: 22px; margin-top: 3px; color: var(--cyan-2); }
+.auth__side .form-alert { margin: 0; }
+
+.auth__tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 6px; border-radius: 16px; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--stroke); margin-bottom: 26px; }
+.auth__tab { height: 46px; border-radius: 12px; font-weight: 700; font-size: 15.5px; color: var(--text-2); transition: color 0.3s, background 0.3s, box-shadow 0.3s; }
+.auth__tab:hover { color: #fff; }
+.auth__tab.is-active { color: #fff; background: linear-gradient(120deg, rgba(47, 107, 255, 0.6), rgba(139, 92, 246, 0.6)); box-shadow: 0 0 22px rgba(79, 139, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.16); }
+.auth__panel[hidden] { display: none; }
+.auth__heading { font-size: 23px; font-weight: 800; margin-bottom: 20px; }
+.auth__sub { color: var(--text-2); margin-bottom: 22px; }
+.auth__row { display: flex; gap: 12px; flex-wrap: wrap; }
+.auth__switch { margin-top: 18px; text-align: center; color: var(--muted); font-size: 15px; }
+.link { color: var(--cyan-2); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.link:hover { color: #fff; }
+
+.strength { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 2px; }
+.strength span { height: 5px; border-radius: 4px; background: rgba(255, 255, 255, 0.1); transition: background 0.3s; }
+.strength[data-level="1"] span:nth-child(-n+1) { background: #fb7185; }
+.strength[data-level="2"] span:nth-child(-n+2) { background: #fbbf24; }
+.strength[data-level="3"] span:nth-child(-n+3) { background: #34d399; }
+.strength[data-level="4"] span:nth-child(-n+4) { background: var(--cyan); }
+
+.auth__import { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--stroke); }
+.auth__import strong { display: block; font-size: 15.5px; }
+.auth__import span { color: var(--muted); font-size: 13.5px; line-height: 1.6; }
+.auth__file { cursor: pointer; flex: none; }
+
+@media (max-width: 960px) {
+  .auth { grid-template-columns: 1fr; max-width: 560px; }
+  .auth__card { order: -1; }
+}
+@media (max-width: 640px) {
+  .auth { gap: 18px; }
+  .auth__side, .auth__card { padding: 26px 20px; }
+  .auth__import { flex-direction: column; align-items: stretch; text-align: center; }
+  .auth__file { justify-content: center; }
+  .auth__row .btn { width: 100%; }
+  .nav__back span { display: none; }
+  .nav__back { padding: 0 12px; }
+}

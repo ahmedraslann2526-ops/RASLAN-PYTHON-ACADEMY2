@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>لوحة الطالب | RASLAN PYTHON ACADEMY</title>
+  <meta name="description" content="لوحة الطالب: تقدمك في المستويات العشرين ونقاط XP والشارات والسلسلة اليومية.">
+  <meta name="theme-color" content="#03040a">
+  <link rel="icon" type="image/svg+xml" href="Assets/icons/favicon.svg">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/animations.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <link rel="stylesheet" href="CSS/account.css">
+  <link rel="stylesheet" href="CSS/dashboard.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="bg__aurora"><span class="blob blob--blue"></span><span class="blob blob--violet"></span><span class="blob blob--cyan"></span></div>
+    <div class="bg__grid"></div>
+    <div class="bg__vignette"></div>
+  </div>
+
+  <header class="nav nav--solid" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="brand" aria-label="RASLAN PYTHON ACADEMY — الرئيسية">
+        <img src="Assets/icons/logo.svg" alt="" class="brand__logo" width="42" height="42">
+        <span class="brand__text">
+          <span class="brand__name">RASLAN <b>PYTHON</b> ACADEMY</span>
+          <span class="brand__tag">Learn Python. Build Your Future.</span>
+        </span>
+      </a>
+      <div class="nav__actions">
+        <a href="index.html" class="nav__back"><svg class="icon"><use href="#i-home"/></svg><span>الرئيسية</span></a>
+        <button type="button" class="nav__back" data-logout><svg class="icon"><use href="#i-logout"/></svg><span>خروج</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <div class="container dash" id="dash" hidden>
+
+      <!-- Welcome -->
+      <section class="dash__hero glass" aria-labelledby="welcomeTitle">
+        <div class="dash__who">
+          <span class="dash__avatar" id="dAvatar" aria-hidden="true"></span>
+          <div>
+            <p class="dash__kicker">لوحة الطالب</p>
+            <h1 class="dash__name" id="welcomeTitle">أهلًا، <span id="dName" class="grad-text"></span></h1>
+            <p class="dash__rank"><svg class="icon"><use href="#i-sparkle"/></svg><span id="dRank"></span></p>
+          </div>
+        </div>
+        <div class="dash__rankbar">
+          <div class="dash__rankline"><span id="dXpNow"></span><span id="dXpNext"></span></div>
+          <div class="bar" role="progressbar" aria-label="التقدم نحو الرتبة التالية" id="dRankBar" aria-valuemin="0" aria-valuemax="100"><span id="dRankFill"></span></div>
+        </div>
+      </section>
+
+      <!-- Current step -->
+      <section class="dash__next glass" id="dNext" aria-live="polite"></section>
+
+      <!-- Graduation project & certificates -->
+      <section class="grad" id="dGrad" aria-label="مشروع التخرج والشهادات"></section>
+
+      <!-- Stats -->
+      <section class="stats" aria-label="إحصائياتك">
+        <article class="stat glass"><div class="stat__ico"><svg class="icon"><use href="#i-bolt"/></svg></div><strong id="sXp">0</strong><span>نقاط XP</span></article>
+        <article class="stat glass"><div class="stat__ico"><svg class="icon"><use href="#i-layers"/></svg></div><strong id="sLevels">0/20</strong><span>مستويات مكتملة</span></article>
+        <article class="stat glass"><div class="stat__ico"><svg class="icon"><use href="#i-flame"/></svg></div><strong id="sStreak">0</strong><span>أيام متتالية <small id="sBest"></small></span></article>
+        <article class="stat glass"><div class="stat__ico"><svg class="icon"><use href="#i-award"/></svg></div><strong id="sBadges">0</strong><span>شارات</span></article>
+        <article class="stat glass"><div class="stat__ico"><svg class="icon"><use href="#i-puzzle"/></svg></div><strong id="sEx">0</strong><span>تمارين محلولة</span></article>
+        <article class="stat glass"><div class="stat__ico"><svg class="icon"><use href="#i-target"/></svg></div><strong id="sPerfect">0</strong><span>اختبارات 100%</span></article>
+      </section>
+
+      <!-- Levels -->
+      <section class="dsec" aria-labelledby="levelsTitle">
+        <header class="dsec__head">
+          <h2 id="levelsTitle">خريطة المستويات</h2>
+          <p>المستوى التالي يُفتح بعد النجاح في اختبار المستوى الحالي بنسبة <b id="passPct">70</b>% أو أكثر.</p>
+        </header>
+        <div class="map" id="levelMap"></div>
+      </section>
+
+      <!-- Dev tools (hidden unless ?dev=1) -->
+      <section class="dsec dev glass" id="devPanel" hidden aria-labelledby="devTitle">
+        <header class="dsec__head">
+          <h2 id="devTitle">أدوات الاختبار (للمطوّر فقط)</h2>
+          <p>تظهر فقط بالرابط <code dir="ltr">dashboard.html?dev=1</code>. تسجّل نتائج حقيقية في حسابك لتجربة فتح المستويات والنقاط والشارات قبل بناء الدروس. استخدم «إعادة ضبط التقدم» لتنظيفها.</p>
+        </header>
+        <div class="dev__row">
+          <span>المستوى الحالي: <b id="devLevel">-</b></span>
+          <button type="button" class="btn btn--glass btn--sm" data-dev="exercise">تمرين متوسط (+35)</button>
+          <button type="button" class="btn btn--glass btn--sm" data-dev="challenge">تحدي المستوى (+80)</button>
+          <button type="button" class="btn btn--glass btn--sm" data-dev="q60">اختبار 60% (رسوب)</button>
+          <button type="button" class="btn btn--glass btn--sm" data-dev="q70">اختبار 70% (نجاح)</button>
+          <button type="button" class="btn btn--glass btn--sm" data-dev="q100">اختبار 100%</button>
+        </div>
+      </section>
+
+      <!-- Badges -->
+      <section class="dsec" aria-labelledby="badgesTitle">
+        <header class="dsec__head">
+          <h2 id="badgesTitle">الشارات</h2>
+          <p id="badgesSub"></p>
+        </header>
+        <div class="badges" id="badgeGrid"></div>
+      </section>
+
+      <!-- Activity -->
+      <section class="dsec" aria-labelledby="actTitle">
+        <header class="dsec__head"><h2 id="actTitle">آخر النشاطات</h2></header>
+        <ul class="activity glass" id="activity"></ul>
+      </section>
+
+      <!-- Account -->
+      <section class="dsec" aria-labelledby="accTitle">
+        <header class="dsec__head">
+          <h2 id="accTitle">إدارة الحساب والبيانات</h2>
+          <p>حسابك محفوظ في هذا المتصفح فقط (نسخة تجريبية). <span id="storageNote"></span></p>
+        </header>
+
+        <div class="settings">
+          <form class="set glass" id="nameForm" novalidate>
+            <h3><svg class="icon"><use href="#i-edit"/></svg>تعديل الاسم</h3>
+            <div class="field"><label class="field__label" for="setName">الاسم</label><input class="input" id="setName" maxlength="40" autocomplete="name"><div class="field__error" id="setNameErr"></div></div>
+            <button type="submit" class="btn btn--glass btn--sm"><svg class="icon"><use href="#i-save"/></svg><span>حفظ الاسم</span></button>
+          </form>
+
+          <form class="set glass" id="pwForm" novalidate>
+            <h3><svg class="icon"><use href="#i-lock"/></svg>تغيير كلمة المرور</h3>
+            <div class="field"><label class="field__label" for="pwOld">الحالية</label><input class="input" id="pwOld" type="password" autocomplete="current-password" dir="ltr"></div>
+            <div class="field"><label class="field__label" for="pwNew">الجديدة</label><input class="input" id="pwNew" type="password" autocomplete="new-password" dir="ltr"></div>
+            <div class="field"><label class="field__label" for="pwNew2">تأكيد الجديدة</label><input class="input" id="pwNew2" type="password" autocomplete="new-password" dir="ltr"><div class="field__error" id="pwErr"></div></div>
+            <button type="submit" class="btn btn--glass btn--sm"><svg class="icon"><use href="#i-save"/></svg><span>تغيير كلمة المرور</span></button>
+          </form>
+
+          <div class="set glass">
+            <h3><svg class="icon"><use href="#i-download"/></svg>نسخة احتياطية</h3>
+            <p class="set__text">حمّل ملف JSON فيه حسابك وتقدمك. احتفظ به في مكان آمن، وتقدر تستورده في أي متصفح أو جهاز آخر من صفحة الدخول. الملف يحتوي بصمة كلمة المرور (Hash) وليس كلمة المرور نفسها.</p>
+            <div class="set__row">
+              <button type="button" class="btn btn--primary btn--sm" id="btnExport"><svg class="icon"><use href="#i-download"/></svg><span>تصدير نسخة</span></button>
+              <label class="btn btn--glass btn--sm auth__file"><svg class="icon"><use href="#i-upload"/></svg><span>استيراد نسخة</span><input type="file" id="importFile" accept="application/json,.json" hidden></label>
+            </div>
+          </div>
+
+          <div class="set glass set--danger">
+            <h3><svg class="icon"><use href="#i-alert"/></svg>منطقة الخطر</h3>
+            <p class="set__text">هذه العمليات لا يمكن التراجع عنها. ننصحك بتصدير نسخة احتياطية قبلها.</p>
+            <div class="set__row">
+              <button type="button" class="btn btn--danger btn--sm" id="btnReset"><svg class="icon"><use href="#i-trash"/></svg><span>إعادة ضبط التقدم</span></button>
+              <button type="button" class="btn btn--danger btn--sm" id="btnDelete"><svg class="icon"><use href="#i-trash"/></svg><span>حذف الحساب</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="Data/curriculum-index.js"></script>
+  <script src="Data/gamification.js"></script>
+  <script src="JS/icons.js"></script>
+  <script src="JS/store.js"></script>
+  <script src="JS/account.js"></script>
+  <script src="JS/dashboard.js"></script>
+</body>
+</html>
