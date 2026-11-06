@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>اختبار ذاتي | RASLAN PYTHON ACADEMY</title>
+  <meta name="theme-color" content="#03040a">
+  <link rel="icon" type="image/svg+xml" href="Assets/icons/favicon.svg">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/account.css">
+  <style>
+    .st { max-width: 860px; margin: 0 auto; padding: 40px 0 80px; }
+    .st h1 { font-size: 30px; font-weight: 800; margin-bottom: 8px; }
+    .st p.lead { color: var(--text-2); margin-bottom: 22px; }
+    .st__sum { padding: 18px 22px; border-radius: 18px; margin-bottom: 18px; font-weight: 700; font-size: 18px; border: 1px solid var(--stroke-2); background: var(--glass); }
+    .st__sum.ok { color: #a7f3d0; border-color: rgba(110, 231, 183, 0.4); }
+    .st__sum.bad { color: #fecdd3; border-color: rgba(251, 113, 133, 0.45); }
+    .st h2 { font-size: 20px; margin: 26px 0 10px; }
+    .st ul { display: flex; flex-direction: column; gap: 8px; }
+    .st li { display: flex; gap: 12px; align-items: baseline; padding: 11px 16px; border-radius: 14px; background: var(--glass); border: 1px solid var(--stroke); font-size: 15px; }
+    .st li b { flex: none; width: 64px; font-family: var(--font-en); font-size: 13px; }
+    .st li.pass b { color: #6ee7b7; } .st li.fail b { color: #fda4af; } .st li.info b { color: var(--cyan-2); } .st li.warn b { color: #fcd34d; }
+    .st li em { color: var(--muted); font-style: normal; font-size: 13px; display: block; }
+    .st__actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+  </style>
+</head>
+<body style="padding: 0 16px">
+  <div class="st">
+    <h1>الاختبار الذاتي</h1>
+    <p class="lead">يشغّل هذه الصفحة اختبارات حقيقية على متصفحك وجهازك: طبقة الحسابات والتقدم والنقاط والشارات، وتشفير كلمة المرور، وقدرات المتصفح اللازمة للمراحل القادمة. الاختبارات تعمل على مساحة تخزين معزولة في الذاكرة ولا تلمس حسابك الحقيقي.</p>
+    <div id="sum" class="st__sum" role="status">جارٍ التشغيل…</div>
+    <h2>قدرات المتصفح</h2><ul id="env"></ul>
+    <h2>اختبارات المرحلة الثانية</h2><ul id="res"></ul>
+    <div class="st__actions">
+      <button type="button" class="btn btn--primary btn--sm" id="again">إعادة التشغيل</button>
+      <a class="btn btn--glass btn--sm" href="index.html">الرئيسية</a>
+    </div>
+    <h2>اختبار محرك Python الحقيقي (Pyodide)</h2>
+    <p class="lead">هذا هو الاختبار الأهم: يحمّل Pyodide الحقيقي داخل Web Worker على جهازك ويشغّل عليه برامج فعلية (طباعة، حلقات، دوال، input()، أخطاء، حلقة لا نهائية)، ويختبر عزل التشغيلات عن بعضها، وطابور المحررات، والتصحيح الفعلي لتمارين حقيقية من الدروس، والملفات، ومراحل مشروع التخرج، وإنشاء شهادة PDF باسم عربي. يحتاج إنترنت في أول مرة (نحو 10 ميجابايت) وقد يستغرق من 10 ثوانٍ إلى دقيقة حسب السرعة. اضغط الزر لبدئه.</p>
+    <div id="pysum" class="st__sum" hidden role="status"></div>
+    <ul id="pyres"></ul>
+    <div class="st__actions">
+      <button type="button" class="btn btn--primary btn--sm" id="pyrun">ابدأ اختبار المحرك الحقيقي</button>
+      <button type="button" class="btn btn--glass btn--sm" id="pycopy" disabled>نسخ التقرير</button>
+      <a class="btn btn--glass btn--sm" href="playground.html">فتح RASLAN PYTHON PLAYGROUND</a>
+    </div>
+    <p class="lead" style="margin-top:18px">بعد انتهاء الاختبار اضغط «نسخ التقرير» وأرسل لي النص الناتج إن ظهر أي فشل.</p>
+  </div>
+
+  <script>
+    // تخزين معزول في الذاكرة — يجب أن يُعرَّف قبل تحميل store.js
+    (function () {
+      var m = new Map();
+      window.RPA_TEST_STORAGE = {
+        getItem: function (k) { return m.has(k) ? m.get(k) : null; },
+        setItem: function (k, v) { m.set(k, String(v)); },
+        removeItem: function (k) { m.delete(k); },
+        get length() { return m.size; },
+        key: function (i) { return Array.from(m.keys())[i] || null; }
+      };
+    })();
+  </script>
+  <script src="Data/curriculum-index.js"></script>
+  <script src="Data/gamification.js"></script>
+  <script src="JS/store.js"></script>
+  <script src="JS/py-errors.js"></script>
+  <script src="JS/py-runner.js"></script>
+  <script src="JS/grader.js"></script>
+  <script src="Data/levels/level-03.js"></script>
+  <script src="Data/levels/level-05.js"></script>
+  <script src="Data/levels/level-19.js"></script>
+  <script src="Data/project.js"></script>
+  <script src="JS/pdf.js"></script>
+  <script src="JS/certificate.js"></script>
+  <script src="JS/selftest.js"></script>
+</body>
+</html>

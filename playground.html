@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>RASLAN PYTHON PLAYGROUND | محرر Python تفاعلي</title>
+  <meta name="description" content="RASLAN PYTHON PLAYGROUND: اكتب كود Python وشغّله فعليًا في متصفحك بمحرك Pyodide الحقيقي، مع دعم input() وشرح الأخطاء بالعربية.">
+  <meta name="theme-color" content="#03040a">
+  <link rel="icon" type="image/svg+xml" href="Assets/icons/favicon.svg">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/animations.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <link rel="stylesheet" href="CSS/account.css">
+  <link rel="stylesheet" href="CSS/playground.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="bg__aurora"><span class="blob blob--blue"></span><span class="blob blob--violet"></span><span class="blob blob--cyan"></span></div>
+    <div class="bg__grid"></div>
+    <div class="bg__vignette"></div>
+  </div>
+
+  <header class="nav nav--solid" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="brand" aria-label="RASLAN PYTHON ACADEMY — الرئيسية">
+        <img src="Assets/icons/logo.svg" alt="" class="brand__logo" width="42" height="42">
+        <span class="brand__text">
+          <span class="brand__name">RASLAN <b>PYTHON</b> ACADEMY</span>
+          <span class="brand__tag">Learn Python. Build Your Future.</span>
+        </span>
+      </a>
+      <div class="nav__actions">
+        <div class="nav__account" id="navAccount"></div>
+        <a href="index.html" class="nav__back"><svg class="icon"><use href="#i-home"/></svg><span>الرئيسية</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <div class="container">
+      <header class="pgpage__head">
+        <h1>RASLAN <b>PYTHON</b> PLAYGROUND</h1>
+        <p>اكتب كود Python وشغّله مباشرة في متصفحك. المحرك هو Python الحقيقي (Pyodide) وليس محاكاة، ويعمل بدون أن يرسل كودك لأي سيرفر.</p>
+      </header>
+
+      <div id="playgroundRoot"></div>
+
+      <section class="pginfo" aria-label="معلومات عن المحرر">
+        <article class="glass">
+          <h2><svg class="icon"><use href="#i-terminal"/></svg>الإدخال input()‎</h2>
+          <p>عندما يصل برنامجك إلى input() تظهر خانة إدخال أسفل المخرجات. اكتب القيمة واضغط Enter، وسيكمل البرنامج بها.</p>
+        </article>
+        <article class="glass">
+          <h2><svg class="icon"><use href="#i-shield"/></svg>حماية من التجمّد</h2>
+          <p>البرنامج يعمل بمعزل عن الصفحة. إن استغرق أكثر من 8 ثوانٍ (مثل حلقة لا نهائية) يُوقَف تلقائيًا ويمكنك إيقافه يدويًا بزر «إيقاف».</p>
+        </article>
+        <article class="glass">
+          <h2><svg class="icon"><use href="#i-info"/></svg>ملاحظات</h2>
+          <p>أول تشغيل يحتاج إنترنت لتحميل المحرك (نحو 10 ميجابايت) ثم يُخزَّن. المكتبات المتاحة هي مكتبة Python القياسية (math وrandom وjson…). كودك يُحفظ تلقائيًا في هذا المتصفح.</p>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <script src="Data/curriculum-index.js"></script>
+  <script src="Data/gamification.js"></script>
+  <script src="JS/icons.js"></script>
+  <script src="JS/store.js"></script>
+  <script src="JS/account.js"></script>
+  <script src="JS/py-errors.js"></script>
+  <script src="JS/py-runner.js"></script>
+  <script src="JS/playground.js"></script>
+</body>
+</html>

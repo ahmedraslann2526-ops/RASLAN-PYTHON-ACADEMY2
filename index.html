@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>RASLAN PYTHON ACADEMY | Learn Python. Build Your Future.</title>
+  <meta name="description" content="أكاديمية تعليم Python بالعربية: 20 مستوى من الصفر حتى الاحتراف، تطبيق عملي، محرر أكواد، اختبارات ومشاريع حقيقية وشهادة إتمام.">
+  <meta name="theme-color" content="#03040a">
+  <meta property="og:title" content="RASLAN PYTHON ACADEMY">
+  <meta property="og:description" content="Learn Python. Build Your Future.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="Assets/icons/favicon.svg">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/animations.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
+  <link rel="stylesheet" href="CSS/account.css">
+  <noscript><style>#loader{display:none!important}body.is-loading{overflow:auto!important}</style></noscript>
+</head>
+<body class="is-loading">
+
+  <!-- ===== SVG icon sprite (inline so the site works when opened directly from disk) ===== -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-ai" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/><path d="M9.5 15v-4.5a2.5 2.5 0 0 1 5 0V15M9.5 13h5"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/><circle cx="7" cy="15" r="1"/><circle cx="11" cy="10" r="1"/><circle cx="14" cy="13" r="1"/><circle cx="19" cy="6" r="1"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></symbol>
+      <symbol id="i-cog" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></symbol>
+      <symbol id="i-game" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 10.5v4M5 12.5h4"/><circle cx="16" cy="11.5" r="1"/><circle cx="18.5" cy="14" r="1"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5l8 3v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10v-6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l2 5.5L19.5 10.5 14 12.5 12 18l-2-5.5L4.5 10.5 10 8.5z"/><path d="M19 3v3M17.5 4.5h3M5 17v3M3.5 18.5h3"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/><path d="M9 8h7M9 12h5"/></symbol>
+      <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="3"/><path d="M7 10l3 2-3 2M12.5 15h4.5"/></symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7.5 11M17 6h3v1.5a3.5 3.5 0 0 1-3.5 3.5"/><path d="M12 14v4M8 21h8M9.5 18h5"/></symbol>
+      <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1-2 4-2 6 2 0 5-.5 6-2"/><path d="M12 15l-3-3c1-4 4-8 11-9 0 7-4 11-8 12z"/><circle cx="15.5" cy="8.5" r="1.5"/></symbol>
+      <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/><path d="M9.5 9l2 2 3-3.5"/></symbol>
+      <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M10 3a2 2 0 0 1 4 0v2h4a1 1 0 0 1 1 1v4h-2a2 2 0 0 0 0 4h2v4a1 1 0 0 1-1 1h-4v-2a2 2 0 0 0-4 0v2H6a1 1 0 0 1-1-1v-4h2a2 2 0 0 0 0-4H5V6a1 1 0 0 1 1-1h4z"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M20 12H4M10 6l-6 6 6 6"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V5M5.5 11.5L12 5l6.5 6.5"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.5-3.6 3.2-5.5 6.5-5.5s6 1.9 6.5 5.5"/><path d="M16 4.7a3.5 3.5 0 0 1 0 6.6M18 14.8c2 .6 3.2 2.3 3.5 5.2"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5S3.5 15 3.5 8.9A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 8.5 1.9C20.5 15 12 20.5 12 20.5z"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5M3 17.5l9 5 9-5"/></symbol>
+      <symbol id="i-mouse" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="5.5"/><path d="M12 7v4"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ===== Page loading animation ===== -->
+  <div id="loader" role="status" aria-live="polite">
+    <div class="loader__inner">
+      <div class="loader__logo">
+        <img src="Assets/icons/logo.svg" alt="" width="84" height="84">
+        <span class="loader__ring"></span>
+        <span class="loader__ring loader__ring--2"></span>
+      </div>
+      <div class="loader__name">RASLAN <span>PYTHON</span> ACADEMY</div>
+      <div class="loader__tag">Learn Python. Build Your Future.</div>
+      <div class="loader__bar"><span id="loaderBar"></span></div>
+      <div class="loader__code" dir="ltr"><span class="c-kw">import</span> academy <span class="c-op">→</span> <span id="loaderPct">0</span>%</div>
+    </div>
+  </div>
+
+  <!-- ===== Animated background ===== -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__aurora">
+      <span class="blob blob--blue"></span>
+      <span class="blob blob--violet"></span>
+      <span class="blob blob--cyan"></span>
+    </div>
+    <div class="bg__grid"></div>
+    <canvas id="bgCanvas"></canvas>
+    <div class="bg__vignette"></div>
+  </div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="brand" data-scroll aria-label="RASLAN PYTHON ACADEMY — الرئيسية">
+        <img src="Assets/icons/logo.svg" alt="" class="brand__logo" width="42" height="42">
+        <span class="brand__text">
+          <span class="brand__name">RASLAN <b>PYTHON</b> ACADEMY</span>
+          <span class="brand__tag">Learn Python. Build Your Future.</span>
+        </span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="القائمة الرئيسية">
+        <a href="#home" data-scroll data-nav="home" class="nav__link is-active">Home</a>
+        <a href="#about" data-scroll data-nav="about" class="nav__link">About</a>
+        <a href="#courses" data-scroll data-nav="courses" class="nav__link">Courses</a>
+        <a href="#features" data-scroll data-nav="features" class="nav__link">Features</a>
+        <a href="#contact" data-scroll data-nav="contact" class="nav__link">Contact</a>
+        <span class="nav__indicator" id="navIndicator" aria-hidden="true"></span>
+      </nav>
+
+      <div class="nav__actions">
+        <div class="nav__account" id="navAccount"></div>
+        <a href="#courses" class="btn btn--primary btn--sm nav__cta" data-scroll data-start>
+          <span>ابدأ التعلم</span>
+          <svg class="icon"><use href="#i-arrow"/></svg>
+        </a>
+        <button class="burger" id="burger" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Mobile menu ===== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu__backdrop" data-close-menu></div>
+    <nav class="mobile-menu__panel" aria-label="القائمة على الجوال">
+      <div class="mobile-menu__head">
+        <span class="brand__name">RASLAN <b>PYTHON</b> ACADEMY</span>
+        <button type="button" class="mobile-menu__close" data-close-menu aria-label="إغلاق القائمة">
+          <svg class="icon"><use href="#i-up"/></svg>
+        </button>
+      </div>
+      <a href="#home" data-scroll data-nav="home" class="mobile-menu__link"><span>Home</span><small>الرئيسية</small></a>
+      <a href="#about" data-scroll data-nav="about" class="mobile-menu__link"><span>About</span><small>عن الأكاديمية والمؤسس</small></a>
+      <a href="#courses" data-scroll data-nav="courses" class="mobile-menu__link"><span>Courses</span><small>المنهج والمستويات</small></a>
+      <a href="#features" data-scroll data-nav="features" class="mobile-menu__link"><span>Features</span><small>مميزات الأكاديمية</small></a>
+      <a href="#contact" data-scroll data-nav="contact" class="mobile-menu__link"><span>Contact</span><small>ابدأ رحلتك</small></a>
+      <div class="mobile-account" id="mobileAccount"></div>
+      <a href="#courses" class="btn btn--primary btn--block" data-scroll data-start>
+        <span>ابدأ التعلم الآن</span>
+        <svg class="icon"><use href="#i-arrow"/></svg>
+      </a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home" data-section="home">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="eyebrow reveal" data-anim="up">
+            <span class="eyebrow__dot"></span>
+            <span dir="ltr">Learn Python. Build Your Future.</span>
+          </div>
+
+          <h1 class="hero__title reveal" data-anim="up" style="--d:.08s">
+            ابدأ رحلتك في عالم البرمجة
+            <span class="grad-text">من الصفر حتى الاحتراف</span>
+          </h1>
+
+          <p class="hero__desc reveal" data-anim="up" style="--d:.16s">
+            تعلم لغة Python بطريقة ممتعة وتفاعلية، واكتسب مهارات البرمجة وابنِ مشاريعك بنفسك.
+          </p>
+
+          <div class="hero__actions reveal" data-anim="up" style="--d:.24s">
+            <a href="#courses" class="btn btn--primary btn--lg" data-scroll data-start>
+              <span>ابدأ التعلم الآن</span>
+              <svg class="icon"><use href="#i-rocket"/></svg>
+            </a>
+            <a href="#courses" class="btn btn--glass btn--lg" data-scroll>
+              <span>اكتشف المنهج</span>
+              <svg class="icon"><use href="#i-layers"/></svg>
+            </a>
+            <a href="#about" class="btn btn--ghost btn--lg" data-scroll>
+              <span>تعرف على الأكاديمية</span>
+              <svg class="icon"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+
+          <ul class="hero__stats reveal" data-anim="up" style="--d:.32s">
+            <li><strong data-count="20">20</strong><span>مستوى تعليمي</span></li>
+            <li><strong>100%</strong><span>شرح باللغة العربية</span></li>
+            <li><strong>0</strong><span>تثبيت مطلوب للتجربة</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__stage reveal" data-anim="zoom" style="--d:.2s">
+          <div class="stage__glow"></div>
+          <div class="stage__ring stage__ring--1"></div>
+          <div class="stage__ring stage__ring--2"></div>
+
+          <div class="bot-wrap" id="botWrap">
+            <div class="bot-bubble" id="botBubble" role="status" aria-live="polite">أهلاً! أنا PYTHON BOT، مدرّسك الافتراضي 👋</div>
+            <div class="bot-canvas" id="botCanvas" aria-label="شخصية PYTHON BOT ثلاثية الأبعاد — اضغط عليها لتغيير تعبيرها" role="img"></div>
+            <button type="button" class="bot-mood" id="botMood" aria-label="غيّر تعبير PYTHON BOT">
+              <svg class="icon"><use href="#i-sparkle"/></svg>
+              <span>غيّر مزاجي</span>
+            </button>
+          </div>
+
+          <div class="chip chip--a float" aria-hidden="true">{ }</div>
+          <div class="chip chip--b float float--slow" aria-hidden="true">def</div>
+          <div class="chip chip--c float float--rev" aria-hidden="true">print()</div>
+          <div class="chip chip--d float" aria-hidden="true">[ ]</div>
+          <div class="chip chip--e float float--slow" aria-hidden="true">import</div>
+
+          <div class="codecard glass" dir="ltr" aria-hidden="true">
+            <div class="codecard__bar">
+              <i></i><i></i><i></i>
+              <span>hello.py</span>
+            </div>
+            <pre class="codecard__body"><code id="heroCode"></code><span class="caret"></span></pre>
+          </div>
+        </div>
+      </div>
+
+      <a href="#why" class="scroll-hint" data-scroll aria-label="انزل لاكتشاف المزيد">
+        <svg class="icon"><use href="#i-mouse"/></svg>
+        <span>اكتشف المزيد</span>
+      </a>
+    </section>
+
+    <!-- ================= WHY PYTHON ================= -->
+    <section class="section" id="why" data-section="why" data-nav-owner="home">
+      <div class="container">
+        <header class="section__head reveal" data-anim="up">
+          <span class="kicker">Why Python</span>
+          <h2 class="section__title">لماذا تتعلم <span class="grad-text">Python</span>؟</h2>
+          <p class="section__sub">لغة بسيطة في قراءتها، قوية في إمكانياتها، وتستخدمها أكبر الفرق التقنية في العالم في مجالات متعددة. تعلمها مرة، واستخدمها في أي اتجاه تختاره.</p>
+        </header>
+
+        <div class="grid grid--4">
+          <article class="card tilt spot reveal" data-anim="up" style="--d:0s">
+            <div class="card__icon"><svg class="icon"><use href="#i-bolt"/></svg></div>
+            <h3>سهلة التعلم</h3>
+            <p>صياغتها قريبة من اللغة الإنجليزية العادية، فتركز على التفكير والمنطق بدل تعقيدات الكتابة.</p>
+          </article>
+          <article class="card tilt spot reveal" data-anim="up" style="--d:.06s">
+            <div class="card__icon card__icon--violet"><svg class="icon"><use href="#i-ai"/></svg></div>
+            <h3>الذكاء الاصطناعي</h3>
+            <p>اللغة الأولى في تعلم الآلة والذكاء الاصطناعي بفضل مكتباتها القوية وأدواتها الناضجة.</p>
+          </article>
+          <article class="card tilt spot reveal" data-anim="up" style="--d:.12s">
+            <div class="card__icon card__icon--cyan"><svg class="icon"><use href="#i-chart"/></svg></div>
+            <h3>تحليل البيانات</h3>
+            <p>اقرأ البيانات ونظفها وحللها وارسمها، وحوّل الأرقام إلى قرارات واضحة.</p>
+          </article>
+          <article class="card tilt spot reveal" data-anim="up" style="--d:.18s">
+            <div class="card__icon"><svg class="icon"><use href="#i-globe"/></svg></div>
+            <h3>تطوير المواقع</h3>
+            <p>ابنِ مواقع وخدمات ويب سريعة وآمنة باستخدام أطر عمل عملية ومنتشرة.</p>
+          </article>
+          <article class="card tilt spot reveal" data-anim="up" style="--d:0s">
+            <div class="card__icon card__icon--violet"><svg class="icon"><use href="#i-cog"/></svg></div>
+            <h3>الأتمتة وتوفير الوقت</h3>
+            <p>اكتب سكربتات تنجز المهام المتكررة نيابة عنك: ملفات، تقارير، رسائل وغيرها.</p>
+          </article>
+          <article class="card tilt spot reveal" data-anim="up" style="--d:.06s">
+            <div class="card__icon card__icon--cyan"><svg class="icon"><use href="#i-game"/></svg></div>
+            <h3>الألعاب والتطبيقات</h3>
+            <p>ابدأ بصناعة ألعابك وتطبيقاتك الصغيرة، وتعلم البرمجة وأنت تستمتع.</p>
+          </article>
+          <article class="card tilt spot reveal" data-anim="up" style="--d:.12s">
+            <div class="card__icon"><svg class="icon"><use href="#i-shield"/></svg></div>
+            <h3>الأمن السيبراني</h3>
+            <p>تُستخدم في فحص الأنظمة وأتمتة الاختبارات الأمنية وتحليل السجلات.</p>
+          </article>
+          <article class="card tilt spot reveal" data-anim="up" style="--d:.18s">
+            <div class="card__icon card__icon--violet"><svg class="icon"><use href="#i-users"/></svg></div>
+            <h3>مجتمع ضخم وفرص عمل</h3>
+            <p>مجتمع عالمي ضخم، توثيق غني، وطلب مستمر على مبرمجي Python في سوق العمل.</p>
+          </article>
+        </div>
+
+        <div class="marquee reveal" data-anim="fade" aria-hidden="true">
+          <div class="marquee__track">
+            <span>الذكاء الاصطناعي</span><i></i><span>تحليل البيانات</span><i></i><span>تطوير الويب</span><i></i><span>الأتمتة</span><i></i><span>الألعاب</span><i></i><span>الأمن السيبراني</span><i></i><span>علم البيانات</span><i></i><span>إنترنت الأشياء</span><i></i>
+            <span>الذكاء الاصطناعي</span><i></i><span>تحليل البيانات</span><i></i><span>تطوير الويب</span><i></i><span>الأتمتة</span><i></i><span>الألعاب</span><i></i><span>الأمن السيبراني</span><i></i><span>علم البيانات</span><i></i><span>إنترنت الأشياء</span><i></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COURSES / LEVELS ================= -->
+    <section class="section" id="courses" data-section="courses">
+      <div class="container">
+        <header class="section__head reveal" data-anim="up">
+          <span class="kicker">Curriculum</span>
+          <h2 class="section__title">ماذا <span class="grad-text">ستتعلم</span>؟</h2>
+          <p class="section__sub">20 مستوى متدرجًا تأخذك خطوة بخطوة من أول سطر كود حتى بناء مشاريع متقدمة. اضغط على أي مستوى لتعرف محتواه.</p>
+        </header>
+
+        <div class="tabs reveal" data-anim="up" role="tablist" aria-label="تصفية المستويات">
+          <button type="button" class="tab is-active" role="tab" aria-selected="true" data-filter="all">كل المستويات <em>20</em></button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-filter="beginner">مبتدئ <em>8</em></button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-filter="intermediate">متوسط <em>7</em></button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-filter="advanced">متقدم <em>5</em></button>
+          <span class="tabs__glider" id="tabsGlider" aria-hidden="true"></span>
+        </div>
+
+        <div class="grid grid--levels" id="levelsGrid">
+          <!-- Beginner (1–8) -->
+          <article class="level tilt spot" data-level="beginner" data-n="1">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">01</span>
+              <span class="level__body">
+                <span class="badge badge--beginner">مبتدئ</span>
+                <strong class="level__title">أول أمر في Python: print()‎</strong>
+                <span class="level__desc">اكتب أول سطر كود وشاهد النتيجة على الشاشة.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>ما هي Python وأين تُستخدم</li><li>الدالة print()‎ وطباعة أول رسالة</li><li>الأقواس وعلامات التنصيص</li><li>التعليقات وقواعد الكتابة</li>
+            <li class="level__go"><a href="lesson.html?n=1" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="beginner" data-n="2">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">02</span>
+              <span class="level__body">
+                <span class="badge badge--beginner">مبتدئ</span>
+                <strong class="level__title">النصوص والأرقام والجمع والطرح</strong>
+                <span class="level__desc">اطبع نصوصًا وأرقامًا وجرّب أول العمليات الحسابية.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>الفرق بين النص والرقم</li><li>طباعة أكثر من قيمة</li><li>الجمع والطرح بالأرقام</li><li>دمج النصوص</li>
+            <li class="level__go"><a href="lesson.html?n=2" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="beginner" data-n="3">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">03</span>
+              <span class="level__body">
+                <span class="badge badge--beginner">مبتدئ</span>
+                <strong class="level__title">المتغيرات</strong>
+                <span class="level__desc">خزّن المعلومات في أسماء تستخدمها وقتما تشاء.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>إنشاء متغير وإعطاؤه قيمة</li><li>قواعد تسمية المتغيرات</li><li>تغيير قيمة المتغير</li><li>استخدام المتغيرات داخل print()‎</li>
+            <li class="level__go"><a href="lesson.html?n=3" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="beginner" data-n="4">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">04</span>
+              <span class="level__body">
+                <span class="badge badge--beginner">مبتدئ</span>
+                <strong class="level__title">أنواع البيانات</strong>
+                <span class="level__desc">تعرّف على int وfloat وstr وbool وكيف تحوّل بينها.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>int وfloat</li><li>str وbool</li><li>الدالة type()‎</li><li>التحويل بين الأنواع</li>
+            <li class="level__go"><a href="lesson.html?n=4" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="beginner" data-n="5">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">05</span>
+              <span class="level__body">
+                <span class="badge badge--beginner">مبتدئ</span>
+                <strong class="level__title">إدخال البيانات: input()‎</strong>
+                <span class="level__desc">خلّي برنامجك يسأل المستخدم ويتفاعل معه.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>الدالة input()‎</li><li>حفظ إجابة المستخدم في متغير</li><li>تحويل المدخل إلى رقم</li><li>برنامج ترحيب تفاعلي</li>
+            <li class="level__go"><a href="lesson.html?n=5" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="beginner" data-n="6">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">06</span>
+              <span class="level__body">
+                <span class="badge badge--beginner">مبتدئ</span>
+                <strong class="level__title">العمليات الحسابية والمقارنات</strong>
+                <span class="level__desc">الضرب والقسمة والأس والباقي، ثم مقارنة القيم.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>+ - * / // % **</li><li>أولوية العمليات</li><li>مقارنات == != &gt; &lt; &gt;= &lt;=</li><li>النتيجة True أو False</li>
+            <li class="level__go"><a href="lesson.html?n=6" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="beginner" data-n="7">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">07</span>
+              <span class="level__body">
+                <span class="badge badge--beginner">مبتدئ</span>
+                <strong class="level__title">الشرط if / else</strong>
+                <span class="level__desc">خلّي البرنامج يتخذ قرارًا حسب الحالة.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>جملة if</li><li>else والمسافات البادئة</li><li>الشروط المتداخلة البسيطة</li><li>أمثلة من الحياة اليومية</li>
+            <li class="level__go"><a href="lesson.html?n=7" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="beginner" data-n="8">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">08</span>
+              <span class="level__body">
+                <span class="badge badge--beginner">مبتدئ</span>
+                <strong class="level__title">الشرط المتعدد elif</strong>
+                <span class="level__desc">اختر من بين أكثر من احتمال بوضوح وترتيب.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>if وelif وelse</li><li>ترتيب الشروط</li><li>برنامج تقدير الدرجات</li><li>أخطاء شائعة في الشروط</li>
+            <li class="level__go"><a href="lesson.html?n=8" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <!-- Intermediate (9–15) -->
+          <article class="level tilt spot" data-level="intermediate" data-n="9">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">09</span>
+              <span class="level__body">
+                <span class="badge badge--intermediate">متوسط</span>
+                <strong class="level__title">العمليات المنطقية: and / or / not</strong>
+                <span class="level__desc">اربط أكثر من شرط في قرار واحد.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>and</li><li>or</li><li>not</li><li>جداول الصواب وأمثلة عملية</li>
+            <li class="level__go"><a href="lesson.html?n=9" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="intermediate" data-n="10">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">10</span>
+              <span class="level__body">
+                <span class="badge badge--intermediate">متوسط</span>
+                <strong class="level__title">التكرار for</strong>
+                <span class="level__desc">كرّر العمل عدة مرات بدون كتابة الكود من جديد.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>حلقة for</li><li>الدالة range()‎</li><li>العدّاد والمجموع</li><li>تكرار على نص</li>
+            <li class="level__go"><a href="lesson.html?n=10" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="intermediate" data-n="11">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">11</span>
+              <span class="level__body">
+                <span class="badge badge--intermediate">متوسط</span>
+                <strong class="level__title">التكرار while</strong>
+                <span class="level__desc">كرّر طالما الشرط صحيح، وتعلم متى توقف.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>حلقة while</li><li>break وcontinue</li><li>تجنب الحلقات اللانهائية</li><li>لعبة تخمين بسيطة</li>
+            <li class="level__go"><a href="lesson.html?n=11" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="intermediate" data-n="12">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">12</span>
+              <span class="level__body">
+                <span class="badge badge--intermediate">متوسط</span>
+                <strong class="level__title">القوائم Lists</strong>
+                <span class="level__desc">احفظ مجموعة من القيم في مكان واحد.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>إنشاء قائمة والوصول لعناصرها</li><li>append وremove وpop</li><li>التكرار على القائمة</li><li>len وsum وsorted</li>
+            <li class="level__go"><a href="lesson.html?n=12" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="intermediate" data-n="13">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">13</span>
+              <span class="level__body">
+                <span class="badge badge--intermediate">متوسط</span>
+                <strong class="level__title">Tuples و Sets</strong>
+                <span class="level__desc">مجموعات لا تتغير ومجموعات بلا تكرار.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>الـ Tuple وخصائصه</li><li>الـ Set وإزالة التكرار</li><li>عمليات المجموعات</li><li>متى أستخدم كل نوع</li>
+            <li class="level__go"><a href="lesson.html?n=13" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="intermediate" data-n="14">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">14</span>
+              <span class="level__body">
+                <span class="badge badge--intermediate">متوسط</span>
+                <strong class="level__title">القواميس Dictionaries</strong>
+                <span class="level__desc">خزّن البيانات على شكل مفتاح وقيمة.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>إنشاء قاموس</li><li>قراءة وتعديل القيم</li><li>keys وvalues وitems</li><li>التكرار على القاموس</li>
+            <li class="level__go"><a href="lesson.html?n=14" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="intermediate" data-n="15">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">15</span>
+              <span class="level__body">
+                <span class="badge badge--intermediate">متوسط</span>
+                <strong class="level__title">الدوال Functions</strong>
+                <span class="level__desc">اكتب كودًا مرة واحدة واستخدمه في أي مكان، ومعاه أهم طرق النصوص.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>def والاستدعاء</li><li>دالة بمعامل واحد</li><li>طرق النصوص: upper وlower وstrip وreplace</li><li>تنسيق النصوص f-string</li><li class="level__go"><a href="lesson.html?n=15" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <!-- Advanced (16–20) -->
+          <article class="level tilt spot" data-level="advanced" data-n="16">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">16</span>
+              <span class="level__body">
+                <span class="badge badge--advanced">متقدم</span>
+                <strong class="level__title">المعاملات والإرجاع Parameters &amp; Return</strong>
+                <span class="level__desc">مرّر بيانات للدالة وخليها ترجّع لك نتيجة تستخدمها.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>أكثر من معامل وقيم افتراضية</li><li>return والفرق بينها وبين print</li><li>إرجاع أكثر من قيمة</li><li>split وjoin مع الدوال</li><li class="level__go"><a href="lesson.html?n=16" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="advanced" data-n="17">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">17</span>
+              <span class="level__body">
+                <span class="badge badge--advanced">متقدم</span>
+                <strong class="level__title">النطاق والمكتبات Scope &amp; Modules</strong>
+                <span class="level__desc">افهم أين يعيش المتغير، واستخدم مكتبات Python الجاهزة.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>المتغيرات المحلية والعامة</li><li>الكلمة global ومتى نتجنبها</li><li>import وfrom وas</li><li>math وrandom وstring</li><li class="level__go"><a href="lesson.html?n=17" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="advanced" data-n="18">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">18</span>
+              <span class="level__body">
+                <span class="badge badge--advanced">متقدم</span>
+                <strong class="level__title">التعامل مع الملفات File Handling</strong>
+                <span class="level__desc">اقرأ البيانات من ملفات واكتب فيها واحفظ شغلك.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>open()‎ وأوضاع r وw وa</li><li>with وإغلاق الملف تلقائيًا</li><li>القراءة سطرًا بسطر</li><li>معالجة بيانات الملف</li><li class="level__go"><a href="lesson.html?n=18" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="advanced" data-n="19">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">19</span>
+              <span class="level__body">
+                <span class="badge badge--advanced">متقدم</span>
+                <strong class="level__title">الأخطاء والاستثناءات Error Handling</strong>
+                <span class="level__desc">تعامل مع الأخطاء بدل ما البرنامج يقف فجأة.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>try وexcept لأنواع محددة</li><li>else وfinally</li><li>raise ورسائل خطأ واضحة</li><li>التحقق من مدخلات المستخدم</li><li class="level__go"><a href="lesson.html?n=19" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+          <article class="level tilt spot" data-level="advanced" data-n="20">
+            <button type="button" class="level__btn" aria-expanded="false">
+              <span class="level__num">20</span>
+              <span class="level__body">
+                <span class="badge badge--advanced">متقدم</span>
+                <strong class="level__title">البرمجة الكائنية OOP</strong>
+                <span class="level__desc">صمّم أشياء لها خصائص وسلوك، وجهّز نفسك لمشروع التخرج.</span>
+              </span>
+              <svg class="icon level__chev"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="level__topics">
+              <li>الكلاس والكائن و__init__</li><li>الدوال داخل الكلاس (Methods)</li><li>الوراثة بشكل مبسط</li><li>__str__ وتمثيل الكائن كنص</li><li class="level__go"><a href="lesson.html?n=20" class="link">ابدأ هذا المستوى ←</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section class="section" id="features" data-section="features">
+      <div class="container">
+        <header class="section__head reveal" data-anim="up">
+          <span class="kicker">Academy Features</span>
+          <h2 class="section__title">مميزات <span class="grad-text">الأكاديمية</span></h2>
+          <p class="section__sub">كل ما تحتاجه لتتعلم البرمجة فعليًا وليس نظريًا فقط، في مكان واحد وبتجربة مصممة بعناية.</p>
+        </header>
+
+        <div class="bento">
+          <article class="card bento__item bento__item--wide tilt spot reveal" data-anim="up">
+            <div class="card__icon"><svg class="icon"><use href="#i-book"/></svg></div>
+            <h3>شرح باللغة العربية</h3>
+            <p>كل مفهوم يُشرح بلغة عربية مبسطة وأمثلة من الحياة، مع مدرّس افتراضي يرافقك في كل درس.</p>
+            <div class="mini-chat" aria-hidden="true">
+              <div class="mini-chat__msg mini-chat__msg--bot">المتغير زي علبة بنحط فيها قيمة ونديها اسم 📦</div>
+              <div class="mini-chat__msg mini-chat__msg--me">يعني ممكن أغيّر اللي جواها؟</div>
+              <div class="mini-chat__msg mini-chat__msg--bot">بالظبط! 👌</div>
+            </div>
+          </article>
+
+          <article class="card bento__item bento__item--code tilt spot reveal" data-anim="up" style="--d:.06s">
+            <div class="card__icon card__icon--cyan"><svg class="icon"><use href="#i-terminal"/></svg></div>
+            <h3>محرر أكواد تفاعلي</h3>
+            <p>اكتب كود Python وشغّله مباشرة من المتصفح دون تثبيت أي شيء. <a href="playground.html" class="link">جرّب RASLAN PYTHON PLAYGROUND الآن</a></p>
+            <div class="mini-code" dir="ltr" aria-hidden="true">
+              <div><span class="c-fn">print</span>(<span class="c-str">"Hello, Python!"</span>)</div>
+              <div><span class="c-kw">for</span> i <span class="c-kw">in</span> <span class="c-fn">range</span>(<span class="c-num">3</span>):</div>
+              <div>&nbsp;&nbsp;<span class="c-fn">print</span>(i * <span class="c-num">2</span>)</div>
+              <div class="mini-code__out">▶ 0 &nbsp;2 &nbsp;4</div>
+            </div>
+          </article>
+
+          <article class="card bento__item tilt spot reveal" data-anim="up" style="--d:.1s">
+            <div class="card__icon card__icon--violet"><svg class="icon"><use href="#i-puzzle"/></svg></div>
+            <h3>تطبيق عملي</h3>
+            <p>كل درس يتبعه تمرين تطبقه بنفسك، فالبرمجة تُتعلَّم بالممارسة.</p>
+          </article>
+
+          <article class="card bento__item tilt spot reveal" data-anim="up" style="--d:.14s">
+            <div class="card__icon"><svg class="icon"><use href="#i-trophy"/></svg></div>
+            <h3>اختبارات وتحديات</h3>
+            <p>اختبارات قصيرة وتحديات تقيس فهمك وتكسبك نقاطًا وإنجازات.</p>
+            <div class="mini-bars" aria-hidden="true"><span style="--w:92%"></span><span style="--w:68%"></span><span style="--w:81%"></span></div>
+          </article>
+
+          <article class="card bento__item tilt spot reveal" data-anim="up" style="--d:.18s">
+            <div class="card__icon card__icon--cyan"><svg class="icon"><use href="#i-rocket"/></svg></div>
+            <h3>مشاريع حقيقية</h3>
+            <p>ابنِ مشاريع تضيفها لأعمالك وتفتخر بها أمام أي صاحب عمل.</p>
+          </article>
+
+          <article class="card bento__item bento__item--wide bento__item--cert tilt spot reveal" data-anim="up" style="--d:.22s">
+            <div class="bento__certtext">
+              <div class="card__icon card__icon--violet"><svg class="icon"><use href="#i-award"/></svg></div>
+              <h3>شهادة إتمام</h3>
+              <p>عند إنهاء المنهج ومشروع التخرج تحصل على شهادة إتمام داخلية من الأكاديمية باسمك وتوقيع المؤسس، بصيغة PDF. <a href="certificate.html" class="link">صفحة الشهادات</a></p>
+            </div>
+            <div class="mini-cert" aria-hidden="true">
+              <div class="mini-cert__border">
+                <small>CERTIFICATE OF COMPLETION</small>
+                <b>RASLAN PYTHON ACADEMY</b>
+                <span class="mini-cert__line"></span>
+                <em>Eng. Ahmed Raslan</em>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= JOURNEY ================= -->
+    <section class="section" id="journey" data-section="journey" data-nav-owner="features">
+      <div class="container">
+        <header class="section__head reveal" data-anim="up">
+          <span class="kicker">Learning Journey</span>
+          <h2 class="section__title">رحلة <span class="grad-text">التعلم</span></h2>
+          <p class="section__sub">من لحظة بدايتك حتى تصبح مبرمجًا واثقًا، هذه هي خريطة الطريق التي ستسير عليها.</p>
+        </header>
+
+        <ol class="timeline" id="timeline">
+          <span class="timeline__line" aria-hidden="true"><span class="timeline__fill" id="timelineFill"></span></span>
+
+          <li class="timeline__item reveal" data-anim="right">
+            <span class="timeline__node"><svg class="icon"><use href="#i-rocket"/></svg></span>
+            <div class="timeline__card glass">
+              <span class="timeline__step">الخطوة 01</span>
+              <h3>ابدأ من الصفر</h3>
+              <p>لا تحتاج أي خبرة سابقة. تجهّز، وتكتب أول برنامج لك في دقائق.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal" data-anim="left">
+            <span class="timeline__node"><svg class="icon"><use href="#i-book"/></svg></span>
+            <div class="timeline__card glass">
+              <span class="timeline__step">الخطوة 02</span>
+              <h3>اتقن الأساسيات</h3>
+              <p>المتغيرات، الأنواع، الشروط والحلقات، وهي الأساس الذي يقوم عليه كل شيء.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal" data-anim="right">
+            <span class="timeline__node"><svg class="icon"><use href="#i-layers"/></svg></span>
+            <div class="timeline__card glass">
+              <span class="timeline__step">الخطوة 03</span>
+              <h3>نظّم بياناتك</h3>
+              <p>القوائم والقواميس والمجموعات، لتتعامل مع البيانات بالطريقة الصحيحة.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal" data-anim="left">
+            <span class="timeline__node"><svg class="icon"><use href="#i-code"/></svg></span>
+            <div class="timeline__card glass">
+              <span class="timeline__step">الخطوة 04</span>
+              <h3>اكتب كودًا احترافيًا</h3>
+              <p>الدوال والملفات والأخطاء والبرمجة كائنية التوجه لتبني برامج منظمة.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal" data-anim="right">
+            <span class="timeline__node"><svg class="icon"><use href="#i-target"/></svg></span>
+            <div class="timeline__card glass">
+              <span class="timeline__step">الخطوة 05</span>
+              <h3>ابنِ مشاريعك</h3>
+              <p>طبّق كل ما تعلمته في مشاريع حقيقية تنتهي بمشروع التخرج.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal" data-anim="left">
+            <span class="timeline__node"><svg class="icon"><use href="#i-award"/></svg></span>
+            <div class="timeline__card glass">
+              <span class="timeline__step">الخطوة 06</span>
+              <h3>احصل على شهادتك</h3>
+              <p>استلم شهادة الإتمام، وانطلق نحو الاحتراف بثقة ومهارة حقيقية.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT / FOUNDER ================= -->
+    <section class="section" id="about" data-section="about">
+      <div class="container">
+        <header class="section__head reveal" data-anim="up">
+          <span class="kicker">About the Academy</span>
+          <h2 class="section__title">عن <span class="grad-text">المؤسس</span></h2>
+        </header>
+
+        <div class="about glass reveal" data-anim="up">
+          <div class="about__photo">
+            <div class="photo">
+              <span class="photo__orbit photo__orbit--1"></span>
+              <span class="photo__orbit photo__orbit--2"></span>
+              <div class="photo__frame" id="founderPhoto">
+                <span class="photo__initials" aria-hidden="true">AR</span>
+                <img id="founderImg" alt="Ahmed Raslan" hidden>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__text">
+            <span class="badge badge--glow">Software Engineer &amp; Founder</span>
+            <h3 class="about__name" dir="ltr">Ahmed Raslan</h3>
+            <p>مهندس برمجيات ومؤسس RASLAN PYTHON ACADEMY. أسّس الأكاديمية ليجد المتعلم العربي مكانًا يتعلم فيه Python بلغته، وبأسلوب عملي يبدأ من الصفر ولا يترك فجوات في الطريق.</p>
+            <p>يؤمن أحمد أن البرمجة مهارة تُكتسب بالتطبيق، لذلك صُمّم كل مستوى في الأكاديمية ليجعلك تكتب الكود وتجرّبه وتبني به شيئًا حقيقيًا.</p>
+
+            <ul class="values">
+              <li><svg class="icon"><use href="#i-target"/></svg><span>التعلم بالتطبيق</span></li>
+              <li><svg class="icon"><use href="#i-sparkle"/></svg><span>وضوح في الشرح</span></li>
+              <li><svg class="icon"><use href="#i-heart"/></svg><span>شغف بالجودة</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CALL TO ACTION ================= -->
+    <section class="section section--cta" id="contact" data-section="contact">
+      <div class="container">
+        <div class="cta glass reveal" data-anim="zoom">
+          <span class="cta__glow" aria-hidden="true"></span>
+          <svg class="icon cta__icon"><use href="#i-rocket"/></svg>
+          <h2 class="cta__title">مستقبلك في البرمجة يبدأ بخطوة، <span class="grad-text">ابدأ رحلتك الآن.</span></h2>
+          <p class="cta__sub">مستوى واحد في كل مرة، وستجد نفسك تكتب كودًا حقيقيًا. أول خطوة هي الأصعب، والباقي ممتع.</p>
+          <div class="cta__actions">
+            <a href="#courses" class="btn btn--primary btn--lg" data-scroll data-start>
+              <span>ابدأ رحلتك الآن</span>
+              <svg class="icon"><use href="#i-rocket"/></svg>
+            </a>
+            <a href="#journey" class="btn btn--glass btn--lg" data-scroll>
+              <span>شاهد رحلة التعلم</span>
+              <svg class="icon"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#home" class="brand" data-scroll>
+            <img src="Assets/icons/logo.svg" alt="" class="brand__logo" width="42" height="42">
+            <span class="brand__text">
+              <span class="brand__name">RASLAN <b>PYTHON</b> ACADEMY</span>
+              <span class="brand__tag">Learn Python. Build Your Future.</span>
+            </span>
+          </a>
+          <p>أكاديمية عربية لتعليم Python من الصفر حتى الاحتراف، بالتطبيق العملي والمشاريع الحقيقية.</p>
+        </div>
+        <nav class="footer__links" aria-label="روابط التذييل">
+          <a href="#home" data-scroll>Home</a>
+          <a href="#about" data-scroll>About</a>
+          <a href="#courses" data-scroll>Courses</a>
+          <a href="#features" data-scroll>Features</a>
+          <a href="#contact" data-scroll>Contact</a>
+          <a href="playground.html">Playground</a>
+        </nav>
+      </div>
+      <div class="footer__bottom" dir="ltr">
+        <p>RASLAN PYTHON ACADEMY © 2026</p>
+        <p>Designed &amp; Developed by Eng. Ahmed Raslan.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="to-top" id="toTop" aria-label="العودة إلى أعلى الصفحة">
+    <svg class="icon"><use href="#i-up"/></svg>
+  </button>
+
+  <script src="Data/curriculum-index.js"></script>
+  <script src="Data/gamification.js"></script>
+  <script src="JS/icons.js"></script>
+  <script src="JS/store.js"></script>
+  <script src="JS/account.js"></script>
+  <script src="JS/bot.js"></script>
+  <script src="JS/main.js"></script>
+</body>
+</html>
