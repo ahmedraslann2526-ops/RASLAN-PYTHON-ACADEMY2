@@ -1,0 +1,123 @@
+/* =====================================================================
+   RASLAN PYTHON ACADEMY — account.css  (Phase 2)
+   عناصر مشتركة بين الصفحات: شريط الحساب في القائمة، النماذج، الإشعارات، الحوارات.
+   يعتمد على متغيرات style.css.
+   ===================================================================== */
+
+/* ---------- Account slot in navigation ---------- */
+.nav__account { display: flex; align-items: center; gap: 10px; }
+.acc-btn { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 16px; border-radius: 13px; font-weight: 600; font-size: 15px; white-space: nowrap;
+  background: var(--glass-2); border: 1px solid var(--stroke-2); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.35s var(--ease), border-color 0.3s, background 0.3s, box-shadow 0.3s; }
+.acc-btn:hover { transform: translateY(-2px); border-color: rgba(103, 232, 249, 0.5); background: rgba(255, 255, 255, 0.12); box-shadow: 0 12px 28px -12px rgba(34, 211, 238, 0.45); }
+.acc-btn .icon { width: 18px; height: 18px; color: var(--cyan-2); }
+
+.acc-user { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 14px 0 6px; padding-inline: 6px 14px; border-radius: 15px; max-width: 220px;
+  background: var(--glass-2); border: 1px solid var(--stroke-2); transition: transform 0.35s var(--ease), border-color 0.3s, box-shadow 0.3s; }
+.acc-user:hover { transform: translateY(-2px); border-color: rgba(103, 232, 249, 0.5); box-shadow: 0 12px 28px -12px rgba(34, 211, 238, 0.45); }
+.acc-user__avatar { width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center; flex: none; font-family: var(--font-en); font-weight: 700; font-size: 16px; color: #fff;
+  background: linear-gradient(135deg, var(--blue), var(--violet)); box-shadow: 0 0 16px rgba(79, 139, 255, 0.5); }
+.acc-user__meta { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
+.acc-user__name { font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.acc-user__xp { font-family: var(--font-en); font-size: 11.5px; color: var(--cyan-2); }
+
+/* ---------- Mobile account block ---------- */
+.mobile-account { display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: 18px; background: var(--glass); border: 1px solid var(--stroke); }
+.mobile-account__who { display: flex; align-items: center; gap: 12px; }
+.mobile-account__who strong { display: block; font-size: 16px; }
+.mobile-account__who small { color: var(--cyan-2); font-family: var(--font-en); }
+.mobile-account__row { display: flex; gap: 10px; }
+.mobile-account__row > * { flex: 1; }
+
+/* ---------- Page shell for auth / dashboard ---------- */
+.page-main { position: relative; z-index: 1; padding-top: calc(var(--nav-h) + 36px); padding-bottom: 80px; min-height: 100vh; }
+.nav--solid { background: rgba(5, 8, 24, 0.72); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); box-shadow: 0 1px 0 var(--stroke); }
+.nav__back { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 16px; border-radius: 13px; font-weight: 600; font-size: 15px; color: var(--text-2); border: 1px solid var(--stroke); background: var(--glass); transition: color 0.3s, border-color 0.3s, background 0.3s; }
+.nav__back:hover { color: #fff; border-color: rgba(103, 232, 249, 0.45); background: var(--glass-2); }
+.nav__back .icon { width: 18px; height: 18px; }
+
+/* ---------- Form controls ---------- */
+.field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.field__label { font-size: 14.5px; font-weight: 700; color: var(--text-2); }
+.field__wrap { position: relative; }
+.input { width: 100%; height: 52px; padding: 0 16px; border-radius: 14px; font: inherit; font-size: 16px; color: var(--text);
+  background: rgba(255, 255, 255, 0.05); border: 1px solid var(--stroke-2); outline: none; transition: border-color 0.3s, box-shadow 0.3s, background 0.3s; }
+.input::placeholder { color: var(--muted); }
+.input:focus { border-color: var(--cyan); background: rgba(255, 255, 255, 0.07); box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.14); }
+.input[dir="ltr"] { text-align: left; font-family: var(--font-en); }
+.input[aria-invalid="true"] { border-color: #fb7185; box-shadow: 0 0 0 4px rgba(251, 113, 133, 0.14); }
+.field__wrap .input { padding-inline-end: 52px; }
+.field__eye { position: absolute; top: 50%; inset-inline-end: 8px; transform: translateY(-50%); width: 38px; height: 38px; display: grid; place-items: center; border-radius: 10px; color: var(--muted); transition: color 0.3s, background 0.3s; }
+.field__eye:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
+.field__hint { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.field__error { font-size: 13.5px; color: #fda4af; min-height: 0; line-height: 1.6; }
+.field__error:empty { display: none; }
+
+.form-alert { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 14px; font-size: 14.5px; line-height: 1.7; margin-bottom: 16px; }
+.form-alert .icon { width: 20px; height: 20px; margin-top: 3px; }
+.form-alert--error { color: #fecdd3; background: rgba(244, 63, 94, 0.12); border: 1px solid rgba(251, 113, 133, 0.35); }
+.form-alert--ok { color: #a7f3d0; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(110, 231, 183, 0.35); }
+.form-alert--warn { color: #fde68a; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(252, 211, 77, 0.3); }
+.form-alert--info { color: var(--text-2); background: rgba(47, 107, 255, 0.1); border: 1px solid rgba(79, 139, 255, 0.3); }
+.form-alert[hidden] { display: none; }
+
+.btn[disabled], .btn.is-busy { opacity: 0.65; cursor: progress; pointer-events: none; }
+.btn--danger { color: #fecdd3; background: rgba(244, 63, 94, 0.14); border: 1px solid rgba(251, 113, 133, 0.4); }
+.btn--danger:hover { background: rgba(244, 63, 94, 0.26); transform: translateY(-3px); box-shadow: 0 14px 34px -12px rgba(244, 63, 94, 0.5); }
+
+/* ---------- Toasts ---------- */
+.toasts { position: fixed; z-index: 400; inset-inline: 0; bottom: 22px; display: flex; flex-direction: column; align-items: center; gap: 10px; pointer-events: none; padding: 0 16px; }
+.toast { pointer-events: auto; max-width: min(460px, 100%); display: flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 16px; font-size: 15px; font-weight: 600;
+  background: rgba(10, 17, 48, 0.94); border: 1px solid var(--stroke-2); box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(47, 107, 255, 0.25);
+  animation: toastIn 0.5s var(--ease) both; }
+.toast .icon { width: 20px; height: 20px; color: var(--cyan-2); flex: none; }
+.toast--ok .icon { color: #6ee7b7; }
+.toast--error .icon { color: #fda4af; }
+.toast--badge { border-color: rgba(167, 139, 250, 0.5); box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.8), 0 0 36px rgba(139, 92, 246, 0.45); }
+.toast.is-leaving { animation: toastOut 0.35s var(--ease) both; }
+@keyframes toastIn { from { opacity: 0; transform: translateY(20px) scale(0.96); } to { opacity: 1; transform: none; } }
+@keyframes toastOut { to { opacity: 0; transform: translateY(12px) scale(0.97); } }
+
+/* ---------- Modal (native <dialog>) ---------- */
+.modal { width: min(460px, calc(100% - 32px)); max-height: calc(100vh - 32px); padding: 0; border: 1px solid var(--stroke-2); border-radius: 24px; color: var(--text);
+  background: linear-gradient(180deg, rgba(16, 26, 69, 0.97), rgba(6, 9, 25, 0.98)); box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.9), 0 0 60px rgba(47, 107, 255, 0.25); overflow: auto; }
+.modal::backdrop { background: rgba(2, 3, 10, 0.72); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.modal[open] { animation: modalIn 0.45s var(--ease) both; }
+@keyframes modalIn { from { opacity: 0; transform: translateY(24px) scale(0.96); } to { opacity: 1; transform: none; } }
+.modal__body { padding: 28px 26px 24px; }
+.modal__title { font-size: 21px; font-weight: 800; margin-bottom: 8px; }
+.modal__text { color: var(--text-2); font-size: 15.5px; line-height: 1.8; margin-bottom: 18px; }
+.modal__actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+.modal__actions .btn { flex: 1 1 140px; }
+
+/* مساحة الشريط: بعد إضافة الحساب نخفي زر «ابدأ التعلم» في الشاشات المتوسطة (موجود في الـ Hero) */
+@media (max-width: 1180px) {
+  .nav__cta { display: none; }
+  .nav__link { padding: 9px 13px; }
+  .acc-user { max-width: 180px; }
+}
+@media (max-width: 980px) {
+  .nav__link { padding: 9px 9px; }
+  .acc-user { padding: 0 5px; }
+  .acc-user__meta { display: none; }
+  .acc-btn span { display: none; }
+  .acc-btn { padding: 0 12px; }
+}
+@media (max-width: 860px) {
+  .nav__account { display: none; }
+}
+@media (max-width: 640px) {
+  .page-main { padding-top: calc(var(--nav-h) + 22px); padding-bottom: 60px; }
+  .toasts { bottom: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .toast, .modal[open] { animation: none; }
+}
+
+/* رابط نصي مشترك (يُستخدم في الصفحة الرئيسية وصفحات الحساب والمحرر) */
+.link { color: var(--cyan-2); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.link:hover { color: #fff; }
+
+/* رابط «ابدأ هذا المستوى» داخل بطاقات المستويات في الصفحة الرئيسية */
+.level__topics li.level__go { padding-inline-start: 0; margin-top: 4px; }
+.level__topics li.level__go::before { display: none; }

@@ -1,0 +1,67 @@
+/* =====================================================================
+   RASLAN PYTHON ACADEMY — certificate.css  (Phase 3 / Batch 4)
+   صفحات الشهادات والتحقق + أسلوب الطباعة
+   ===================================================================== */
+.crt-page { display: flex; flex-direction: column; gap: 22px; }
+.crt-head h1 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 800; }
+.crt-head p { color: var(--text-2); margin: 6px 0 14px; }
+.crt-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.crt { display: flex; gap: 18px; padding: 24px; align-items: flex-start; }
+.crt--ready { border-color: rgba(103, 232, 249, 0.55); box-shadow: 0 0 36px -10px rgba(34, 211, 238, 0.5); }
+.crt--issued { border-color: rgba(110, 231, 183, 0.5); }
+.crt__ico { width: 54px; height: 54px; flex: none; border-radius: 18px; display: grid; place-items: center; background: var(--grad-soft); border: 1px solid var(--stroke-2); color: var(--cyan-2); }
+.crt--issued .crt__ico { color: #fff; background: linear-gradient(135deg, var(--blue), var(--violet)); }
+.crt__ico .icon { width: 26px; height: 26px; }
+.crt__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.crt__body h2 { font-size: 20px; font-weight: 800; }
+.crt__course { color: var(--cyan-2); font-family: var(--font-en); font-size: 14px; text-align: start; }
+.crt__req { display: flex; flex-direction: column; gap: 4px; }
+.crt__req li { display: flex; gap: 8px; align-items: center; color: var(--text-2); font-size: 14.5px; }
+.crt__req li.ok { color: #6ee7b7; }
+.crt__req .icon { width: 16px; height: 16px; }
+.crt__why { color: var(--muted); font-size: 14px; line-height: 1.8; }
+.crt__meta { color: var(--text-2); font-size: 14.5px; line-height: 1.9; }
+.crt__meta code { font-family: var(--font-code); background: rgba(0, 0, 0, 0.3); padding: 2px 8px; border-radius: 6px; unicode-bidi: isolate; white-space: nowrap; }
+.crt__meta bdi { white-space: nowrap; }
+.crt__row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.crt__row .btn[disabled] { opacity: 0.5; pointer-events: none; }
+.crt-form { padding: 26px; display: flex; flex-direction: column; gap: 14px; }
+.crt-form h2 { font-size: 22px; font-weight: 800; }
+.crt-form__note { color: var(--text-2); line-height: 1.9; }
+.crt-form .field { margin: 0; max-width: 520px; }
+.crt__preview { border-radius: 14px; overflow: hidden; border: 1px solid var(--stroke-2); box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.9); background: #fff; }
+.crt__canvas { display: block; width: 100%; height: auto; }
+.crt__hint { color: var(--muted); font-size: 13.5px; line-height: 1.8; padding: 8px 12px; background: rgba(0, 0, 0, 0.25); }
+.crt-form > .crt__hint { background: none; padding: 0; }
+#certView[hidden] { display: none; }
+
+/* التحقق */
+.vf { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+.vf form { display: flex; gap: 10px; flex-wrap: wrap; }
+.vf form .input { flex: 1 1 260px; font-family: var(--font-code); text-transform: uppercase; }
+.vf__res { padding: 24px; display: flex; flex-direction: column; gap: 8px; }
+.vf__res[hidden] { display: none; }
+.vf__res.is-ok { border-color: rgba(110, 231, 183, 0.5); }
+.vf__res.is-bad { border-color: rgba(251, 113, 133, 0.45); }
+.vf__res h2 { font-size: 20px; font-weight: 800; display: flex; gap: 10px; align-items: center; }
+.vf__res.is-ok h2 { color: #6ee7b7; } .vf__res.is-bad h2 { color: #fda4af; }
+.vf__res dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; color: var(--text-2); }
+.vf__res dt { color: var(--muted); }
+.vf__res dd { margin: 0; color: var(--text); overflow-wrap: anywhere; }
+
+.print-only { display: none; }
+@media (max-width: 860px) { .crt-list { grid-template-columns: 1fr; } }
+@media (max-width: 640px) {
+  .crt { padding: 18px 16px; gap: 12px; }
+  .crt__ico { width: 44px; height: 44px; border-radius: 14px; }
+  .crt-form { padding: 18px 14px; }
+  .crt__row .btn { flex: 1 1 100%; justify-content: center; }
+}
+
+/* الطباعة: الشهادة فقط على صفحة A4 بالعرض بدون هوامش */
+@media print {
+  @page { size: A4 landscape; margin: 0; }
+  html, body { background: #fff !important; margin: 0 !important; padding: 0 !important; }
+  body > *:not(#printCert) { display: none !important; }
+  #printCert { display: block !important; width: 297mm; height: 210mm; object-fit: contain; margin: 0; }
+}
